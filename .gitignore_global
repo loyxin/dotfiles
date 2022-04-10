@@ -1,0 +1,37 @@
+compile_commands.json
+build
+build_root
+_deps
+
+*.swp
+*.pdf
+tags
+# Python:
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+__init__.py
+dist
+*$py.class
+
+# Windows:
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+db.ini
+.vscode
+
+*.So
+*.so
+*.a
+*.o
+*.dylib
+*.dll
+*.lai
+*.la
+*.exe
+*.out
+*.app
+
+.cache

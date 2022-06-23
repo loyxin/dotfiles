@@ -1,0 +1,53 @@
+#!/bin/bash
+
+system_type=$(uname -s)
+
+if [[ "$system_type" == "Linux" ]]; then
+
+    if [[ -f ~/.zplug/init.zsh ]]; then
+        echo "zplug install"
+    else
+        git clone https://github.com/zplug/zplug ~/.zplug
+        echo "zplug install"
+    fi
+    if [[ -f ~/.tmux/plugins/tpm/tpm ]]; then
+        echo "tpm install"
+    else
+        git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+        echo "tpm install"
+    fi
+    if [[ -f ~/.config/ranger/plugins/ranger_devicons/devicons.py ]]; then
+        echo "ranger devicons install"
+    else
+        git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
+        echo "ranger devicons install"
+    fi
+    if [[ -f ~/.config/ranger/colorschemes/dracula/dracula.py ]]; then
+        echo "ranger dracula colorschemes"
+    else
+        git clone https://github.com/dracula/ranger.git ~/.config/ranger/colorschemes/dracula
+        ln -s ~/.config/ranger/colorschemes/dracula/dracula.py ~/.config/ranger/colorschemes/dracula.py
+        echo "ranger dracula colorschemes"
+    fi
+    mkdir -p ~/.vim/bundle/files/{backup,swap,info,undo}
+    mkdir -p ~/.vim/bundle/repos
+    if [[ -f ~/.vim/autoload/plug.vim ]]; then
+        echo "vim-plug install"
+    else
+        curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        echo "vim-plug install"
+    fi
+
+    if [[ -d ~/.config/loyconf ]]; then
+        echo "loyconf complete"
+    else
+    git clone https://github.com/loyxin/conf.git ~/.config/loyconf
+    git clone https://github.com/loyxin/cheat.git ~/.cheat
+    ln -s ~/.config/loyconf/neofetch ~/.config/neofetch
+    ln -s ~/.config/loyconf/ranger ~/.config/ranger
+    ln -s ~/.config/loyconf/polybar ~/.config/polybar
+    ln -s ~/.config/loyconf/i3 ~/.config/i3
+    ln -s ~/.config/loyconf/background ~/.config/.background
+        echo "loyconf complete"
+    fi
+fi

@@ -1,0 +1,29 @@
+set print elements 500
+set history save on
+set history remove-duplicates 1
+set history size unlimited
+set history filename ~/.gdb_history
+
+# Better GDB defaults ----------------------------------------------------------
+
+set history save
+set verbose off
+set print pretty on
+set print array off
+set print array-indexes on
+set python print-stack full
+
+# Start ------------------------------------------------------------------------
+
+
+set print object on
+set print static-members on
+set print vtbl on
+set print demangle on
+set demangle-style gnu-v3
+set print sevenbit-strings off
+
+set follow-fork-mode child
+set detach-on-fork off
+
+dashboard -layout breakpoints expressions history stack variables

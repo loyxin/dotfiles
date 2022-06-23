@@ -1,0 +1,65 @@
+{
+    "yank.enableCompletion": false,
+    "coc.preferences.extensionUpdateCheck": "never",
+    "workspace.rootPatterns": ["compile_commands.json", ".git"],
+    "suggest.labelMaxLength": 50,
+    "http.proxyStrictSSL": false,
+    "suggest.defaultSortMethod": "none",
+    "suggest.reversePumAboveCursor": true,
+    "notification.disabledProgressSources": [],
+    "colors.enable": true,
+    "diagnostic.virtualText": false,
+    "inlayHint.enable": true,
+    "inlayHint.enableParameter": true,
+
+    "languageserver": {
+        "cmake": {
+            "command": "cmake-language-server",
+            "filetypes": ["cmake"],
+            "initializationOptions": {
+                "buildDirectory": "build_root"
+            }
+        },
+        "bash": {
+            "command": "bash-language-server",
+            "args": ["start"],
+            "filetypes": ["sh"],
+            "ignoredRootPaths": ["~"]
+        }
+    },
+
+    "clangd": {
+        "filetypes": ["c", "cpp", "cuda", "objc", "objcpp", "cc", "c++"],
+        "arguments": [
+            "--clang-tidy",
+            "--enable-config",
+            "--header-insertion-decorators",
+            "--header-insertion=iwyu",
+            "--background-index",
+            "--cross-file-rename",
+            "--all-scopes-completion",
+            "--fallback-style=LLVM",
+            "-j=12"
+        ],
+        "compilationDatabaseCandidates" : ["${workspaceFolder}"],
+        "semanticHighlighting": true,
+        "disableDiagnostics": false,
+        "disableCompletion": false,
+        "disableSnippetCompletion": false
+    },
+    "clangd.enabled": true,
+    "clangd.inlayHints.enable": true,
+    "semanticTokens.filetypes": ["*"],
+
+    "cmake.lsp.serverPath": "cmake-language-server",
+    "cmake.lsp.buildDirectory": "build_root",
+    "cmake.formatter": "cmake-format",
+
+    "xml.server.binary.path": "~/.config/coc/extensions/coc-xml-data/org.eclipse.lemminx-0.11.0.jar",
+    "markdown-preview-enhanced.enableScriptExecution": true,
+
+    "tabnine.priority": 10,
+
+    "git.enableGutters": true
+
+}

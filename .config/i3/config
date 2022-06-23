@@ -1,0 +1,218 @@
+# i3 config file (v4)
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+# Set mod key (Mod1=<Alt>, Mod4=<Super>)
+set $mod Mod4
+# Configure border style <normal|1pixel|pixel xx|none|pixel>
+default_border pixel 1
+default_floating_border pixel 1
+# Hide borders
+hide_edge_borders none
+font Adobe Times Bold 11
+# Set inner/outer gaps
+gaps inner 5
+gaps outer -2
+# Smart gaps (gaps used if only more than one container on the workspace)
+smart_gaps on
+smart_borders on
+exec xrandr --output DVI-D-0 --auto --left-of HDMI-0
+exec xrandr --output DVI-D-0 --primary
+
+# app {{{
+# start a terminal
+bindsym $mod+Return exec alacritty
+bindsym Mod1+a exec --no-startup-id ~/bin/toggle_opacity
+bindsym $mod+Shift+a exec --no-startup-id bash ~/.config/i3/deepin-shot.sh
+bindsym $mod+Shift+z exec sh ~/.config/i3/dmenu.sh
+bindsym $mod+e exec alacritty -e  ranger
+bindsym $mod+Shift+e exec dolphin
+# bindsym $mod+Shift+h exec alacritty -e vim ~/.vim/i3shcut.md
+# Screen brightness controls
+# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
+# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+# }}}
+
+# window {{{
+# Use Mouse+$mod to drag floating windows
+floating_modifier $mod
+# kill focused window
+bindsym $mod+q kill
+# change container layout (stacked, tabbed, toggle split)
+# bindsym $mod+w layout tabbed
+
+bindsym $mod+t floating toggle
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+bindsym Mod1+t exec ~/.local/bin/i3-winmotion -w
+# split orientation
+bindsym $mod+Shift+h split h;exec notify-send 'tile horizontally'
+bindsym $mod+Shift+v split v;exec notify-send 'tile vertically'
+bindsym $mod+s split toggle
+# 跳转到急需处理的窗口
+bindsym $mod+x [urgent=latest] focus
+# }}}
+
+# reload the configuration file
+bindsym $mod+Escape reload
+bindsym $mod+Shift+Escape restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Ctrl+Escape exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# 声音和亮度快捷键
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness up'"
+
+# Autostart applications
+exec_always --no-startup-id sh ~/.config/polybar/launch.sh
+exec_always --no-startup-id autotiling
+exec --no-startup-id compton -b
+exec --no-startup-id clash
+exec --no-startup-id nm-applet
+# exec --no-startup-id pulseaudio
+exec --no-startup-id copyq
+exec feh --bg-scale ~/.config/.background/logon.png
+exec --no-startup-id fcitx
+exec --no-startup-id mate-volume-control-status-icon
+exec --no-startup-id conky -c ~/.config/conkyrc
+# exec --no-startup-id albert
+exec --no-startup-id blueman-applet
+# exec --no-startup-id seafile-applet
+exec --no-startup-id seadrive-gui
+
+# normal{{{
+# change focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+
+# Move focused container to workspace
+bindsym $mod+Ctrl+1 move container to workspace $ws1
+bindsym $mod+Ctrl+2 move container to workspace $ws2
+bindsym $mod+Ctrl+3 move container to workspace $ws3
+bindsym $mod+Ctrl+4 move container to workspace $ws4
+bindsym $mod+Ctrl+5 move container to workspace $ws5
+bindsym $mod+Ctrl+6 move container to workspace $ws6
+bindsym $mod+Ctrl+7 move container to workspace $ws7
+bindsym $mod+Ctrl+8 move container to workspace $ws8
+
+# Move to workspace with focused container
+bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+
+# shortcut $mod+Shift+g
+# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+## todo
+bindsym $mod+g mode "resize"
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        # bindsym n resize shrink width 5 px or 5 ppt
+        # bindsym u resize grow height 5 px or 5 ppt
+        # bindsym e resize shrink height 5 px or 5 ppt
+        # bindsym i resize grow width 5 px or 5 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # exit resize mode: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+# }}}
+
+# Open specific applications in floating mode
+for_window [title="Dolphin"] floating enable
+for_window [title="VLC media player"] fullscreen enable
+for_window [title="Deepin Movie"] floating enable
+for_window [title="Image Viewer"] floating enable
+for_window [title="netease-cloud-music"] floating enable
+for_window [title="Albert"] floating enable
+for_window [title="CopyQ"] floating enable
+for_window [title="Font Manager"] floating enable
+for_window [title="Cloud Music"] floating enable
+for_window [title="Steam"] floating enable
+for_window [class="Seafile"] floating enable
+for_window [class="Alacritty" floating] resize set 1440 960, move left 340px, move up 200px
+for_window [class="Microsoft"] border pixel 1
+for_window [class="Chrome"] border pixel 1
+# xrandr --output eDP-1 --brightness 0.2
+# add win+v copyq
+
+floating_minimum_size 960 x 640

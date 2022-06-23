@@ -1,0 +1,7 @@
+source ~/program/work/.bc
+
+zplug "loy.xin/proxy"
+zplug "loy.xin/pion-zsh-complete"
+zplug "loy.xin/toolsalias"
+
+export EMAIL="loy.luo@asml.com"

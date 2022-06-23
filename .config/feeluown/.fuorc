@@ -1,0 +1,20 @@
+#!/usr/bin/python
+import os
+
+
+# 自定义配置
+config.COLLECTIONS_DIR = '~/Musics'
+config.AUDIO_SELECT_POLICY = '>>>'
+
+
+# 一个小功能：切换歌曲时，发送系统通知
+#def notify_song_changed(song):
+#    if song is not None:
+#        title = song.title_display
+#        artists_name = song.artists_name_display
+#        song_str = f'{title}-{artists_name}'
+#        os.system(f'notify-send "{song_str}"')
+
+#when('app.player.playlist.song_changed', notify_song_changed)
+
+

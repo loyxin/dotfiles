@@ -1,0 +1,21 @@
+#!/usr/bin/bash
+
+[[ ! -f ~/.config/alacritty.yml ]] &&
+    notify-send "alacritty.yml does not exist" && exit 0
+
+## Fetch window.opacity from alacritty.yml
+opacity=$(awk '$1 == "opacity:" {print $2; exit}' \
+    ~/.config/alacritty.yml)
+
+case $opacity in
+1)
+    toggle_opacity=0.3
+    ;;
+*)
+    toggle_opacity=1
+    ;;
+esac
+
+## Replace opacity value in alacritty.yml
+sed -i -- "s/opacity: $opacity/opacity: $toggle_opacity/" \
+    ~/.config/alacritty.yml

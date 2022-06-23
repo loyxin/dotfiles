@@ -1,0 +1,60 @@
+#!/bin/bash
+sudo pacman -S bat choose ccls clang clash cmake cmakelint cmake-format cppcheck cmake-language-server
+sudo pacman -S dbg-macro dust doxygen fd fzf gtest graphviz git-delta
+sudo pacman -S hexyl highlight htop lldb llvm lsd lsof neofetch ncdu npm nodejs
+sudo pacman -S mcfly openssl openssh ranger ripgrep
+sudo pacman -S sd shellcheck shfmt sudo syntax-highlighting tldr tmux python-pip procs tig
+sudo pacman -S valgrind w3m yadm yarn yay zsh
+# sd for sed
+# procs htop
+sudo systemctl enable sshd
+echo "modify sshdconfig ssh-keygen"
+ssh-keygen -t rsa -C "$EMAIL"
+ssh-keygen -t ed25519 -C "$EMAIL"
+
+echo "install gui software? [y,n]"
+read GUI
+if [[ "$GUI" == "y" ]]; then
+    sudo pacman -S alsa-firmware alsa-plugins alacritty albert-git acpilight blueman conky copyq compton alsa-utils
+    sudo pacman -S deepin-image-viewer deepin-screenshot dmenu dolphin duf feh fcitx-qt5 fcitx-configtool
+    sudo pacman -S i3-gaps keepassxc network-manager-applet polybar rofi
+    sudo pacman -S sddm seadrive-gui simplescreenrecoder screenkey
+    sudo pacman -S visual-studio-code-bin vlc volumeicon xorg-xbacklight peek
+    echo "need passwd"
+    sudo ln ~/.config/loyconf/sddm.conf /etc/sddm.conf
+    echo "install sddm theme"
+    sudo pacman -S gst-libav phonon-qt5-gstreamer gst-plugins-good qt5-quickcontrols qt5-graphicaleffects qt5-multimedia
+    git clone https://github.com/3ximus/aerial-sddm-theme.git
+    sudo mv aerial-sddm-theme /usr/share/sddm/themes/aerial
+    sudo systemctl enable sddm
+fi
+
+# screenkey 键盘记录 https://gitlab.com/wavexx/screenkey
+# simplescreenrecoder 一款让你能够从你的屏幕录制简短的动画 GIF 图片
+# peek 一款让你能够从你的屏幕录制简短的动画 GIF 图片
+sudo pacman -S --needed noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra powerline-fonts ttf-nerd-fonts-symbols wqy-microhei adobe-source-han-sans-cn-fonts adobe-source-code-pro-fonts adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts adobe-source-sans-fonts adobe-source-serif-fonts ttf-font-awesome
+
+npm i -g commitizen js-beautify luafmt undollar
+go get github.com/ichinaski/pxl
+pip install git-playback
+
+npm i -g commitizen
+sudo pacman -S archlinuxcn-keyring
+
+yay -S rmx-bin
+
+go install github.com/klauspost/asmfmt/cmd/asmfmt@latest
+go get -u mvdan.cc/sh/cmd/shfmt
+go install asmfmt
+prettier
+sudo pacman -S flameshot
+
+pip3 install -U organize-tool
+
+pip install cmakelang
+cargo install texlab
+latex fmt
+luafmt
+sudo pacman -S flameshot davfs2 dbg-macro dunst dolphin
+
+https://github.com/RedDocMD/cork

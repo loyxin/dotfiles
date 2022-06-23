@@ -1,8 +1,6 @@
 # This is Git's per-user configuration file.
-[user]
-# Please adapt and uncomment the following lines:
-	name = Loyxin
-	email = loy.luo@asml.com
+[include]
+    path = ~/.workdiff/gitdiff
 [core]
 #	pager = /usr/bin/diff-so-fancy | less --tabs=4 -RFX
 	excludesfile = ~/.gitignore_global
@@ -25,18 +23,26 @@
 [merge]
 	tool = vimdiff
 [pager]
-	diff = delta
-	log = delta
-	reflog = delta
-	show = delta
+	diff = delta --features loy
+	log = delta --features loy
+	reflog = delta --features loy
+	show = delta --features loy
 [interactive]
 	diffFilter = delta --color-only --features=interactive
 
-[delta]
-	features = side-by-side line-numbers decorations
+[delta "loy"]
+    side-by-side = true
+	features = line-numbers decorations
     syntax-theme = Dracula
     plus-style = syntax "#003800"
     minus-style = syntax "#3f0001"
+
+[delta "forgit"]
+    side-by-side = false
+	features = decorations
+    syntax-theme = Dracula
+	plus-style = syntax "#003800"
+	minus-style = syntax "#3f0001"
 
 [delta "decorations"]
     commit-decoration-style = bold yellow box ul
@@ -50,7 +56,3 @@
     line-numbers-minus-style = 124
     line-numbers-plus-style = 28
 
-[delta "forgit"]
-	syntax-theme = Dracula
-	plus-style = syntax "#003800"
-	minus-style = syntax "#3f0001"

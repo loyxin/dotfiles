@@ -1,0 +1,21 @@
+set ignorecase
+set executinglinedisplay=highlight
+set color
+set debugwincolor
+set hlsearch
+set selectedlinedisplay=longarrow
+set executinglinedisplay=highlight
+set wso=vertical
+
+unmap <F5>
+unmap <F6>
+unmap <F7>
+unmap <F8>
+unmap <F10>
+
+map <F1> :run<cr>
+map <F2> :continue<cr>
+map <F3> :next<cr>
+map <F4> :step<cr>
+map <F5> :stepi<cr>
+map <F6> :finish<cr>

@@ -1,0 +1,1 @@
+.installsoftware.sh##d.Arch

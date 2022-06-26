@@ -15,14 +15,18 @@ if [[ "$system_type" == "Linux" ]]; then
 		git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 	fi
 
-ln -s ~/bin/conf/alacritty.yml ~/.config/alacritty.yml
-ln -s ~/bin/conf/compton.conf ~/.config/compton.conf
-ln -s ~/bin/conf/neofetch ~/.config/neofetch
-ln -s ~/bin/conf/ranger ~/.config/ranger
-ln -s ~/bin/conf/polybar ~/.config/polybar
-ln -s ~/bin/conf/i3 ~/.config/i3
-ln -s ~/bin/conf/background ~/.config/.background
-ln -s ~/bin/conf/conkyrc ~/.conkyrc
+ln -s ~/.config/loyconf/neofetch ~/.config/neofetch
+ln -s ~/.config/loyconf/ranger ~/.config/ranger
+ln -s ~/.config/loyconf/polybar ~/.config/polybar
+ln -s ~/.config/loyconf/i3 ~/.config/i3
+ln -s ~/.config/loyconf/background ~/.config/.background
+
+echo "need passwd"
+sudo ln ~/.config/loyconf/sddm.conf /etc/sddm.conf
+echo "install sddm theme"
+sudo pacman -S gst-libav phonon-qt5-gstreamer gst-plugins-good qt5-quickcontrols qt5-graphicaleffects qt5-multimedia
+git clone https://github.com/3ximus/aerial-sddm-theme.git
+sudo mv aerial-sddm-theme /usr/share/sddm/themes/aerial
 
 fi
 

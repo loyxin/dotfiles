@@ -1,0 +1,81 @@
+{
+	"yank.enableCompletion": false,
+	"coc.preferences.colorSupport": false,
+	"suggest.labelMaxLength": 50,
+	"http.proxyStrictSSL": false,
+	"suggest.defaultSortMethod": "none",
+	"markdown-preview-enhanced.enableScriptExecution": true,
+	"languageserver": {
+		"ccls": {
+			"command": "/usr/bin/ccls",
+			"filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+			"rootPatterns": [".ccls-root", "compile_commands.json", ".git"],
+			"disableDiagnostics" : true,
+			"initializationOptions": {
+				"cache": {
+					"directory": ".vscode/.ccls-cache"
+				},
+				"client": {
+					"snippetSupport": true
+				},
+				"highlight": {
+					"lsRanges": true
+				},
+				"index.threads": 16,
+				"linters": {
+					"cppcheck": {
+						"command": "cppcheck"
+					}
+				}
+			}
+		},
+		"cmake": {
+			"command": "cmake-language-server",
+			"filetypes": ["cmake"],
+			"rootPatterns": [
+				"build_root/"
+			],
+			"initializationOptions": {
+				"buildDirectory": "build_root"
+			}
+		},
+		"bash": {
+			"command": "bash-language-server",
+			"args": ["start"],
+			"filetypes": ["sh"],
+			"ignoredRootPaths": ["~"]
+		}
+	},
+	"clangd": {
+		"filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+		"arguments": [
+			"--clang-tidy",
+			"--compile-commands-dir=build_root",
+			"--enable-config",
+			"--header-insertion-decorators",
+			"--header-insertion=iwyu",
+			"--background-index",
+			"--cross-file-rename",
+			"-j=12"
+		],
+		"disableDiagnostics": false,
+		"disableCompletion": true,
+		"disableSnippetCompletion": true
+	},
+	"coc.preferences.semanticTokensHighlights": false,
+	"cmake.lsp.enable": true,
+	"cmake.lsp.serverPath": "/usr/bin/cmake-language-server",
+	"cmake.lsp.buildDirectory": "build_root",
+	"cmake.formatter": "/usr/bin/cmake-format",
+
+	"diagnostic-languageserver.filetypes": {
+		"vim": "vint",
+		"sh": "shellcheck",
+	},
+	"diagnostic-languageserver.formatFiletypes": {
+		"sh": "shfmt",
+		"cmake": "cmake-format"
+  },
+  "git.enableGutters": true
+
+}

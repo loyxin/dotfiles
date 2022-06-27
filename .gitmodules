@@ -1,3 +1,0 @@
-[submodule "loyconf"]
-	path = loyconf
-	url = ./.config/loyconf

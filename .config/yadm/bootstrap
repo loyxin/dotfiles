@@ -1,0 +1,4 @@
+git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
+git clone https://github.com/dracula/ranger.git ~/.config/ranger/colorschemes/dracula
+ln -s ~/.config/ranger/colorschemes/dracula/dracula.py ~/.config/ranger/colorschemes/dracula.py
+git clone https://github.com/loyxin/conf.git ~/.config/loyconf

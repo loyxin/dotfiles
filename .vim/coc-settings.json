@@ -1,16 +1,19 @@
 {
 	"yank.enableCompletion": false,
 	"coc.preferences.colorSupport": false,
+    "coc.preferences.extensionUpdateCheck": "never",
+    "coc.preferences.rootPatterns": [".ccls-root", "compile_commands.json", ".git"],
 	"suggest.labelMaxLength": 50,
 	"http.proxyStrictSSL": false,
 	"suggest.defaultSortMethod": "none",
 	"markdown-preview-enhanced.enableScriptExecution": true,
 	"languageserver": {
 		"ccls": {
-			"command": "/usr/bin/ccls",
+			"command": "ccls",
 			"filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
-			"rootPatterns": [".ccls-root", "compile_commands.json", ".git"],
+			"rootPatterns": ["compile_commands.json", ".git"],
 			"disableDiagnostics" : true,
+            "compilationDatabaseDirectory": "build_root",
 			"initializationOptions": {
 				"cache": {
 					"directory": ".vscode/.ccls-cache"
@@ -58,15 +61,17 @@
 			"--cross-file-rename",
 			"-j=12"
 		],
+		"semanticHighlighting": true,
 		"disableDiagnostics": false,
 		"disableCompletion": true,
 		"disableSnippetCompletion": true
 	},
 	"coc.preferences.semanticTokensHighlights": false,
-	"cmake.lsp.enable": true,
-	"cmake.lsp.serverPath": "/usr/bin/cmake-language-server",
+	"cmake.lsp.serverPath": "cmake-language-server",
 	"cmake.lsp.buildDirectory": "build_root",
-	"cmake.formatter": "/usr/bin/cmake-format",
+	"cmake.formatter": "cmake-format",
+
+	"xml.server.binary.path": "~/.config/coc/extensions/coc-xml-data/org.eclipse.lemminx-0.11.0.jar",
 
 	"diagnostic-languageserver.filetypes": {
 		"vim": "vint",

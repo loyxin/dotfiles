@@ -1,7 +1,6 @@
 " 判断{{{
-set pythonthreedll=/usr/lib64/libpython3.so
 let $myvimhome=$HOME
-let g:iswork=0
+so $myvimhome/.workdiff/vimdiff
 " }}}
 
 so $myvimhome/.vim/.vimrc.general.vim
@@ -98,6 +97,32 @@ nmap <silent> cj <Plug>(coc-diagnostic-next)
 " Fix autofix problem of current line
 nmap <silent> fc <Plug>(coc-fix-current)
 nmap rn <Plug>(coc-rename)
+" bases
+nnoremap <silent> xb :call CocLocations('ccls','$ccls/inheritance')<cr>
+" bases of up to 3 levels
+nnoremap <silent> xB :call CocLocations('ccls','$ccls/inheritance',{'levels':3})<cr>
+" derived
+nnoremap <silent> xd :call CocLocations('ccls','$ccls/inheritance',{'derived':v:true})<cr>
+" derived of up to 3 levels
+nnoremap <silent> xD :call CocLocations('ccls','$ccls/inheritance',{'derived':v:true,'levels':3})<cr>
+
+" caller
+nnoremap <silent> xc :call CocLocations('ccls','$ccls/call')<cr>
+" callee
+nnoremap <silent> xC :call CocLocations('ccls','$ccls/call',{'callee':v:true})<cr>
+
+" $ccls/member
+" member variables / variables in a namespace
+nnoremap <silent> xm :call CocLocations('ccls','$ccls/member')<cr>
+" member functions / functions in a namespace
+nnoremap <silent> xf :call CocLocations('ccls','$ccls/member',{'kind':3})<cr>
+" nested classes / types in a namespace
+nnoremap <silent> xs :call CocLocations('ccls','$ccls/member',{'kind':2})<cr>
+
+nmap <silent> xt <Plug>(coc-type-definition)<cr>
+nnoremap <silent> xv :call CocLocations('ccls','$ccls/vars')<cr>
+nnoremap <silent> xV :call CocLocations('ccls','$ccls/vars',{'kind':1})<cr>
+
 " Use K to show documentation in preview window
 nnoremap sd :call <SID>show_documentation()<CR>
 function! s:show_documentation()

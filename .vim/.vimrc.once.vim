@@ -106,3 +106,5 @@ let g:barbaric_ime = 'fcitx'
 " }}}
 
 let g:quickui_color_scheme = 'gruvbox'
+
+let g:tmux_navigator_no_mappings = 1

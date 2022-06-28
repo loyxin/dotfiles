@@ -93,6 +93,8 @@ let g:vista_sidebar_position = "vertical topleft"
 " let g:DoxygenToolkit_returnTag="@returns   "
 " let g:DoxygenToolkit_authorName="loyxin rafrozenluoxin@gmail.com"
 " let g:DoxygenToolkit_licenseTag="My own license"
+let g:DoxygenToolkit_authorName="loy"
 let g:doxygen_enhanced_color = 1
 " }}}
 
+let g:startify_change_to_vcs_root = 1

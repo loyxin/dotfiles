@@ -26,30 +26,16 @@ zplug "plugins/fd", from:oh-my-zsh
 zplug "plugins/aliases", from:oh-my-zsh
 zplug "plugins/safe-paste", from:oh-my-zsh
 
-zplug 'dracula/zsh', as:theme
-DRACULA_DISPLAY_GIT=0
+source ~/.workdiff/zshplugin.zsh
 
-zplug "mollifier/cd-gitroot", as:plugin, lazy:true
-zplug "hlissner/zsh-autopair", defer:2
-zplug "jgogstad/passwordless-history"
-zplug "zdharma-continuum/fast-syntax-highlighting", defer:3
-zplug "zsh-users/zsh-autosuggestions"
-zplug "arzzen/calc.plugin.zsh"
-zplug "djui/alias-tips"
-zplug "wfxr/forgit"
-zplug "k4rthik/git-cal", as:command
-zplug "escalate/oh-my-zsh-proxy-plugin"
-zplug "sobolevn/wakatime-zsh-plugin"
-zplug "paulirish/git-open", as:plugin
+DRACULA_DISPLAY_GIT=0
+FORGIT_DIFF_PAGER="delta --features forgit"
+FORGIT_PAGER="delta --features forgit"
+FORGIT_SHOW_PAGER="delta --features forgit"
 
 zplug load
 
 source ~/.zshset/alias.zsh
-source ~/.fzf.zsh
-
-export GIT_SSL_NO_VERIFY=1
-
-source ~/.workdiff/zshdiff
 
 # eval "$(mcfly init zsh)"
 export EDITOR='vim'
@@ -64,6 +50,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type d --color=never"
 export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {} 2> /dev/null'"
 export BAT_THEME=Dracula
-export EMAIL=loy_xin@163.com
-export GIT_COMMITTER_EMAIL=loy_xin@163.com
-export GIT_AUTHOR_EMAIL=loy_xin@163.com
+
+export MCFLY_KEY_SCHEME=vim
+export MCFLY_INTERFACE_VIEW=BOTTOM
+eval "$(mcfly init zsh)"

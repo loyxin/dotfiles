@@ -76,6 +76,7 @@ set undofile
 " 不可以用鼠标移动光标 a是可以
 set   mouse=c
 set history=1000      " Store a ton of history (default is 20)
+set expandtab       " Expand TABs to spaces"
 "}}}
 
 " other setting{{{

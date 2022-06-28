@@ -1,0 +1,1 @@
+zshplugin.zsh##class.work

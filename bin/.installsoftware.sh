@@ -1,1 +1,1 @@
-.installsoftware.sh##d.Arch
+.installsoftware.sh##default

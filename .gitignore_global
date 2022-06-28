@@ -2,31 +2,25 @@ compile_commands.json
 *build*
 _deps
 .cache
-
+.vscode
+dist
 *.swp
+*.pdf
+tags
+# Python:
 *.py[cod]
 *.so
 *.egg
 *.egg-info
 __init__.py
-*$py.class
 
 # Windows:
 Thumbs.db
 ehthumbs.db
 Desktop.ini
 db.ini
-.vscode
 
 *.So
 *.so
 *.a
-*.o
-*.dylib
-*.dll
-*.lai
-*.la
-*.exe
-*.out
-*.app
 

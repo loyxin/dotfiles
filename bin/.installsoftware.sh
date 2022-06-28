@@ -1,1 +1,0 @@
-.installsoftware.sh##default

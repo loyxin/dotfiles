@@ -1,0 +1,8 @@
+python
+import sys
+sys.path.insert(0, '/usr/local/brion_AVX/gcc/8.1.0/share/gcc-8.1.0/python')
+from libstdcxx.v6.printers import register_libstdcxx_printers
+register_libstdcxx_printers (None)
+end
+
+source ~/.gdbinit.local

@@ -35,11 +35,10 @@ FORGIT_SHOW_PAGER="delta --features forgit"
 
 zplug load
 
-PATH=~/bin:~/.local/bin:~/program/install/bin:~/.cargo/bin:/usr/local/bin:$PATH
+PATH=~/program/install/bin:~/.cargo/bin:$PATH
 
 export PATH
 export LANG="en_US.UTF-8"
-export GIT_SSL_NO_VERIFY=1
 export FZF_DEFAULT_COMMAND='fd --type f --color=never -E "node_modules"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type d --color=never"

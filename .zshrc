@@ -35,7 +35,7 @@ FORGIT_SHOW_PAGER="delta --features forgit"
 
 zplug load
 
-PATH=~/program/install/bin:~/.cargo/bin:$PATH
+PATH=~/program/install/bin:~/.cargo/bin:~/.local/bin:$PATH
 VEHIST=10
 HISTFILE=~/.zsh_history
 

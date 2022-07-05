@@ -1,6 +1,5 @@
 {
 	"yank.enableCompletion": false,
-	"coc.preferences.colorSupport": false,
     "coc.preferences.extensionUpdateCheck": "never",
     "coc.preferences.rootPatterns": [".ccls-root", "compile_commands.json", ".git"],
 	"suggest.labelMaxLength": 50,
@@ -13,7 +12,6 @@
 			"filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
 			"rootPatterns": ["compile_commands.json", ".git"],
 			"disableDiagnostics" : true,
-            "compilationDatabaseDirectory": "build_root",
 			"initializationOptions": {
 				"cache": {
 					"directory": ".vscode/.ccls-cache"
@@ -74,13 +72,11 @@
 	"xml.server.binary.path": "~/.config/coc/extensions/coc-xml-data/org.eclipse.lemminx-0.11.0.jar",
 
 	"diagnostic-languageserver.filetypes": {
-		"vim": "vint",
-		"sh": "shellcheck",
+		"sh": "shellcheck"
 	},
 	"diagnostic-languageserver.formatFiletypes": {
 		"sh": "shfmt",
 		"cmake": "cmake-format"
   },
   "git.enableGutters": true
-
 }

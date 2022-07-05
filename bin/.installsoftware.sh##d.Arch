@@ -1,21 +1,37 @@
-	sudo reflector -c China --save /etc/pacman.d/mirrorlist --sort rate
-	sudo pacman -S cmake llvm neofetch ranger ncdu yay yarn acpilight conky simplescreenrecoder screenkey
-	sudo pacman -S catdoc docx2txt w3m highlight
-	sudo pacman -S --needed nerd-fonts-fira nerd-fonts-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra deepin-screenshot deepin-font-manager powerline-fonts ttf-nerd-fonts-symbols wqy-microhei adobe-source-han-sans-cn-fonts adobe-source-code-pro-fonts adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts adobe-source-sans-fonts adobe-source-serif-fonts ttf-font-awesome
-	sudo pacman -S dmenu alsa-utils alsa-firmware alsa-plugins fcitx-qt5 fcitx-configtool clash pcmanfm lsd xorg-xbacklight
-	sudo pacman -S fd ripgrep dust procs ccls mate-media dolphin
-	yay --aururl "https://aur.tuna.tsinghua.edu.cn" --save
+#!/bin/bash
+sudo pacman -S bat bash-language-server ccls clang clash cmake cmakelint cmake-format cppcheck dbg-macro dust doxygen fd fzf gtest graphviz git-delta
+sudo pacman -S hexyl highlight htop lldb llvm lsd lsof neofetch ncdu npm mcfly openssl openssh ranger ripgrep
+sudo pacman -S sd shellcheck shfmt sudo syntax-highlighting tldr tmux python-pip
+sudo pacman -S valgrind w3m yadm yarn yay zsh
+yay --aururl "https://aur.tuna.tsinghua.edu.cn" --save
+sudo systemctl enable sshd
+echo "modify sshdconfig ssh-keygen"
+ssh-keygen -t rsa -C "$EMAIL"
+sh-keygen -t ed25519 -C "$EMAIL"
+
+echo "install gui software? [y,n]"
+read GUI
+if [[ "$GUI" == "y" ]]; then
+    sudo pacman -S alsa-firmware alsa-plugins alacritty albert-git acpilight blueman conky copyq compton alsa-utils
+    sudo pacman -S deepin-image-viewer deepin-screenshot dmenu dolphin duf feh fcitx-qt5 fcitx-configtool
+    sudo pacman -S i3-gaps keepassxc network-manager-applet polybar rofi
+    sudo pacman -S sddm seadrive-gui simplescreenrecoder screenkey
+    sudo pacman -S visual-studio-code-bin vlc volumeicon xorg-xbacklight peek
+    echo "need passwd"
+    sudo ln ~/.config/loyconf/sddm.conf /etc/sddm.conf
+    echo "install sddm theme"
+    sudo pacman -S gst-libav phonon-qt5-gstreamer gst-plugins-good qt5-quickcontrols qt5-graphicaleffects qt5-multimedia
+    git clone https://github.com/3ximus/aerial-sddm-theme.git
+    sudo mv aerial-sddm-theme /usr/share/sddm/themes/aerial
+    sudo systemctl enable sddm
+fi
+
 # screenkey 键盘记录 https://gitlab.com/wavexx/screenkey
 # simplescreenrecoder 一款让你能够从你的屏幕录制简短的动画 GIF 图片
 # peek 一款让你能够从你的屏幕录制简短的动画 GIF 图片
+sudo pacman -S --needed nerd-fonts-fira nerd-fonts-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra powerline-fonts ttf-nerd-fonts-symbols wqy-microhei adobe-source-han-sans-cn-fonts adobe-source-code-pro-fonts adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts adobe-source-sans-fonts adobe-source-serif-fonts ttf-font-awesome
+npm i -g commitizen
 
 # echo "synergy code: 7B76313B70726F3B6C6F793B353B6C6F794078696E2E78696E3B736A74753B303B307D" 1>&5
-
-# vint shellcheck cmakelint shfmt cmake-format python-pip npm i -g bash-language-server
-# npm i -g js-beautify
-# gofmt rustfmt luafmt latexindent.pl
-# lsd
-# npm i -g commitizen
-
 # ARRAY /dev/md0 metadata=1.2 name=loyxin:0 UUID=131a200b:49c79a36:67bce040:30c55e7f
 # export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890

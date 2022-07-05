@@ -13,3 +13,5 @@ zplug "k4rthik/git-cal", as:command
 zplug "escalate/oh-my-zsh-proxy-plugin"
 zplug "sobolevn/wakatime-zsh-plugin"
 zplug "paulirish/git-open", as:plugin
+
+export EMAIL="loy_xin@163.com"

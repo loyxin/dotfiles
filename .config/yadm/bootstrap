@@ -10,10 +10,10 @@ if [[ "$system_type" == "Linux" ]]; then
 	if [[ -f ~/.tmux/plugins/tpm/tpm ]]; then
 		git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 	fi
-    if [[ -f ~/.config/ranger/plugins/ranger_devicons ]]; then
+    if [[ -f ~/.config/ranger/plugins/ranger_devicons/devicons.py ]]; then
         git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
     fi
-    if [[ -f ~/.config/ranger/colorschemes/dracula ]]; then
+    if [[ -f ~/.config/ranger/colorschemes/dracula/dracula.py ]]; then
         git clone https://github.com/dracula/ranger.git ~/.config/ranger/colorschemes/dracula
         ln -s ~/.config/ranger/colorschemes/dracula/dracula.py ~/.config/ranger/colorschemes/dracula.py
     fi
@@ -22,8 +22,6 @@ if [[ "$system_type" == "Linux" ]]; then
 	if [[ -f ~/.vim/autoload/plug.vim ]]; then
 		curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	fi
-    source ~/.zshrc
-    zplug install
 
     git clone https://github.com/loyxin/conf.git ~/.config/loyconf
     ln -s ~/.config/loyconf/neofetch ~/.config/neofetch

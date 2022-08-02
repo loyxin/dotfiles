@@ -52,3 +52,5 @@
 	syntax-theme = Dracula
 	plus-style = syntax "#003800"
 	minus-style = syntax "#3f0001"
+[pull]
+	rebase = true

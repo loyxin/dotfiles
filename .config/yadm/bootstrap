@@ -42,6 +42,7 @@ if [[ "$system_type" == "Linux" ]]; then
         echo "loyconf complete"
     else
     git clone https://github.com/loyxin/conf.git ~/.config/loyconf
+    git clone https://github.com/loyxin/cheat.git ~/.cheat
     ln -s ~/.config/loyconf/neofetch ~/.config/neofetch
     ln -s ~/.config/loyconf/ranger ~/.config/ranger
     ln -s ~/.config/loyconf/polybar ~/.config/polybar

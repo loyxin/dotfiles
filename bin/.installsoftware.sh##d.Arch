@@ -1,13 +1,15 @@
 #!/bin/bash
-sudo pacman -S bat bash-language-server ccls clang clash cmake cmakelint cmake-format cppcheck cmake-language-server
+sudo pacman -S bat choose ccls clang clash cmake cmakelint cmake-format cppcheck cmake-language-server
 sudo pacman -S dbg-macro dust doxygen fd fzf gtest graphviz git-delta
 sudo pacman -S hexyl highlight htop lldb llvm lsd lsof neofetch ncdu npm nodejs
 sudo pacman -S mcfly openssl openssh ranger ripgrep
-sudo pacman -S sd shellcheck shfmt sudo syntax-highlighting tldr tmux python-pip
+sudo pacman -S sd shellcheck shfmt sudo syntax-highlighting tldr tmux python-pip procs tig
 sudo pacman -S valgrind w3m yadm yarn yay zsh
-yay --aururl "https://aur.tuna.tsinghua.edu.cn" --save
+# sd for sed
+# procs htop
+sudo npm i -g bash-language-server
+sudo npm i -g commitizen
 sudo systemctl enable sshd
-sudo pip3 install cmake-language-server
 echo "modify sshdconfig ssh-keygen"
 ssh-keygen -t rsa -C "$EMAIL"
 ssh-keygen -t ed25519 -C "$EMAIL"
@@ -34,7 +36,3 @@ fi
 # peek 一款让你能够从你的屏幕录制简短的动画 GIF 图片
 sudo pacman -S --needed noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra powerline-fonts ttf-nerd-fonts-symbols wqy-microhei adobe-source-han-sans-cn-fonts adobe-source-code-pro-fonts adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts adobe-source-sans-fonts adobe-source-serif-fonts ttf-font-awesome
 npm i -g commitizen
-
-# echo "synergy code: 7B76313B70726F3B6C6F793B353B6C6F794078696E2E78696E3B736A74753B303B307D" 1>&5
-# ARRAY /dev/md0 metadata=1.2 name=loyxin:0 UUID=131a200b:49c79a36:67bce040:30c55e7f
-# export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890

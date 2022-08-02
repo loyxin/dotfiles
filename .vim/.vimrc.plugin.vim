@@ -152,7 +152,7 @@ Plug 'ryanoasis/vim-devicons',{'dir': '$pluginstalldir/colors/vim-devicons', 'de
 
 " other{{{
 Plug 'skywind3000/vim-keysound', {'dir': '$pluginstalldir/tool/vim-keysound', 'description': 'key sound', 'on' : []}
-Plug 'rlue/vim-barbaric', {'dir': '$pluginstalldir/tool/vim-barbaric', 'description' : '输入法'}
+" Plug 'rlue/vim-barbaric', {'dir': '$pluginstalldir/tool/vim-barbaric', 'description' : '输入法'}
 Plug 'christoomey/vim-tmux-navigator', {
 		\ 'dir': '$pluginstalldir/tool/vim-tmux-navigator',
 		\ 'on': [],

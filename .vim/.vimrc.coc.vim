@@ -39,19 +39,21 @@ let g:coc_global_extensions = [
 \ 'coc-diagnostic',
 \ 'coc-explorer',
 \ 'coc-git',
+\ 'coc-highlight',
+\ 'coc-json',
 \ 'coc-markdown-preview-enhanced',
+\ 'coc-pairs',
+\ 'coc-react-refactor',
 \ 'coc-sh',
 \ 'coc-snippets',
-\ 'coc-pairs',
 \ 'coc-tasks',
 \ 'coc-webview',
 \ 'coc-vimlsp',
-\ 'coc-yank',
 \ 'coc-xml',
-\ 'coc-react-refactor',
+\ 'coc-yank',
+\ 'coc-rust-analyzer',
+\ 'coc-translator',
 \ ]
-" \ 'coc-rust-analyzer',
-" \ 'coc-translator',
 " coc-vimlsp for lsp_cxx_highlight
 " coc-clangd for switch
 

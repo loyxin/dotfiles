@@ -48,5 +48,6 @@
 	"explorer.confirmDelete": false,
 	"editor.wordWrap": "on",
 	"workbench.colorTheme": "Dracula",
+	"explorer.confirmDragAndDrop": false,
 }
 

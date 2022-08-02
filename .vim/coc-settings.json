@@ -57,6 +57,7 @@
 			"--header-insertion=iwyu",
 			"--background-index",
 			"--cross-file-rename",
+            "--all-scopes-completion",
 			"-j=12"
 		],
 		"semanticHighlighting": true,

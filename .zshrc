@@ -39,6 +39,10 @@ PATH=~/program/install/bin:~/.cargo/bin:~/.local/bin:$PATH
 VEHIST=10
 HISTFILE=~/.zsh_history
 
+export NPM_CONFIG_PREFIX=~/.npm-packages
+PATH=$NPM_CONFIG_PREFIX/bin:$PATH
+export NODE_PATH=$NPM_CONFIG_PREFIX/lib/node_modules:$NODE_PATH
+
 export PATH
 export LANG="en_US.UTF-8"
 export FZF_DEFAULT_COMMAND='fd --type f --color=never -E "node_modules"'

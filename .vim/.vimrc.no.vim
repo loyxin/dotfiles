@@ -23,6 +23,19 @@ let g:yankring_replace_n_nkey = '<leader>n'
 "fix for yankring and neovim
 let g:yankring_clipboard_monitor=0
 "}}}
+"
+" snippet{{{
+let g:UltiSnipsExpandTrigger="<c-t>"
+let g:UltiSnipsJumpForwardTrigger="<c-t>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:snips_email='loy_xin@163.com'
+let g:snips_author='loy xin'
+let g:UltiSnipsSnippetsDir=$myvimhome . '/.vim/UltiSnips'
+let g:UltiSnipsUsePythonVersion = 3
+let g:UltiSnips#ExpandSnippet = 1
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+" }}}
 
 " gutentags{{{
 let g:gutentags_enabled=0
@@ -38,7 +51,7 @@ let g:gutentags_cache_dir = s:vim_tags
 
 " 检测 ~/.cache/tags 不存在就新建
 if !isdirectory(s:vim_tags)
-   silent! call mkdir(s:vim_tags, 'p')
+    silent! call mkdir(s:vim_tags, 'p')
 endif
 " }}}
 " file expore netrw{{{
@@ -50,14 +63,14 @@ endif
 
 " file expore defx {{{
 " call defx#custom#option('_', {
-      " \ 'winwidth': 30,
-      " \ 'split': 'vertical',
-      " \ 'direction': 'botright',
-      " \ 'show_ignored_files': 0,
-      " \ 'buffer_name': '',
-      " \ 'toggle': 1,
-      " \ 'resume': 1
-      " \ })
+" \ 'winwidth': 30,
+" \ 'split': 'vertical',
+" \ 'direction': 'botright',
+" \ 'show_ignored_files': 0,
+" \ 'buffer_name': '',
+" \ 'toggle': 1,
+" \ 'resume': 1
+" \ })
 " }}}
 " let g:AlternatePaths = ['../itf', '../src', './', '../', '../include', '../inc', './src', './inc', './include']
 " let g:AlternateExtensionMappings = [{'.cpp' : '.h', '.h' : '.cpp', '.hh' : '.cc', '.cc' : '.hh'}, {'.c': '.h', '.h': '.c'}]
@@ -86,8 +99,8 @@ let g:livepreview_previewer = 'okular'
 let g:livepreview_engine = 'xelatex'
 " }}}
 function! Latexmake()
-	call setline(1, "all: ")
-	call setline(2, "\t xelatex \$<")
+    call setline(1, "all: ")
+    call setline(2, "\t xelatex \$<")
 endfunction
 " keysound{{{
 " 启动 Vim 时自动启动

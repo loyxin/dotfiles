@@ -8,7 +8,6 @@ show_menu() {
             "Tmux Help" "t" "run -b 'source \"$CURRENT_DIR/help.tmux\" && show_menu_tmux'" \
             "Zshell Help" "z" "run -b 'source \"$CURRENT_DIR/help.tmux\" && show_menu_zsh'" \
             "fzf wild Help" "f" "run -b 'source \"$CURRENT_DIR/help.tmux\" && show_menu_fzf'" \
-            "Vim Help" "v" "run -b 'source \"$CURRENT_DIR/help.tmux\" && show_menu_vim'" \
             "git Help" "g" "run -b 'source \"$CURRENT_DIR/help.tmux\" && show_menu_git'" \
             "WM Help" "w" "run -b 'source \"$CURRENT_DIR/help.tmux\" && show_menu_wm'" \
             "cgdb Help" "c" "run -b 'source \"$CURRENT_DIR/help.tmux\" && show_menu_cgdb'" \
@@ -62,51 +61,6 @@ show_menu_fzf() {
             "^wild 前缀匹配" "" "" \
             ".mp3\$ 后缀匹配" "" "" \
             "!wild 反向匹配不包含wild" "" ""
-    )
-}
-
-show_menu_vim() {
-    $(
-        tmux display-menu -T "#[align=centre fg=green]Vim Help" -x C -y C "" \
-            "Coc Command" "" "run -b 'source \"$CURRENT_DIR/help.tmux\" && show_menu_vim_coc'" \
-            "vim tips" "" "run -b 'source \"$CURRENT_DIR/help.tmux\" && show_menu_vim_tip" \
-            "vim regex help" "" ""
-    )
-}
-
-show_menu_vim_coc() {
-    $(
-        tmux display-menu -T "#[align=centre fg=green]Coc Help" -x C -y C "" \
-            "Space o CocList outline" "" "" \
-            "Space s CocList symbols" "" "" \
-            "Space r ranger" "" "" \
-            "rf refactor" "" "" \
-            ",gs git chunkinfo" "" "" \
-            ",gu git chunkundo" "" "" \
-            ",kc ,kb ,ki conflict" "" "" \
-            "x v mode convert snip" "" ""
-    )
-}
-
-show_menu_vim_tip() {
-    $(
-        tmux display-menu -T "#[align=centre fg=green]Vim tips Help" -x C -y C "" \
-            "C-x & C-f 补全文件名" "" "" \
-            "C-x & C-i 补全关键字" "" "" \
-            "C-x & C-e 插入模式下向上滚屏" "" "" \
-            "C-x & C-y 插入模式下向下滚屏" "" "" \
-            "\"aY 存储到寄存器a" "" "" \
-            ". 当前行 $ 最后一行" "" "" \
-            "C-o 执行一次正常模式下的命令" "" "" \
-            "% 跳转到 {} () [] 的匹配" "" "" \
-            "zz 调整光标所在行到屏幕中央" "" "" \
-            "zt 调整光标所在行到屏幕上部" "" "" \
-            "zb 调整光标所在行到屏幕下部" "" "" \
-            "H 移动到屏幕顶部, M 中间 L 底部" "" "" \
-            "f或ctrl+g -- 显示文档名，是否修改，和光标位置" "" "" \
-            "aw: 一词 as: 一句 ap: 一段 ab: 一块" "" "" \
-            "C-o 跳转光标C-i & C-o逆转" "" "" \
-            "alt+shift+hkjl windows" "" ""
     )
 }
 

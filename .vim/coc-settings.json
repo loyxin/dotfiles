@@ -12,6 +12,30 @@
     "inlayHint.enable": true,
     "inlayHint.enableParameter": true,
 
+    "diagnostic-languageserver.filetypes":{
+        "vim":"vint"
+    },
+
+    "cSpell": {
+        "enabled": true,
+        "language": "en",
+        "showStatus": true,
+        // like 'errormessage'
+        "allowCompoundWords": false,
+        "ignoreWords": ["ASML", "asml", "behaviour", "clangd", "cmake"],
+        "cSpell.ignorePaths": [
+            "node_modules", // this will ignore anything the node_modules directory
+            "**/node_modules", // the same for this one
+            "**/node_modules/**", // the same for this one
+            "node_modules/**", // Doesn't currently work due to how the current working directory is determined.
+            "vscode-extension", //
+            ".git", // Ignore the .git directory
+            "*.dll", // Ignore all .dll files.
+            "**/*.dll" // Ignore all .dll files
+        ],
+        "flagWords": ["hte", "mian", "ture"]
+    },
+
     "languageserver": {
         "cmake": {
             "command": "cmake-language-server",
@@ -41,7 +65,7 @@
             "--fallback-style=LLVM",
             "-j=12"
         ],
-        "compilationDatabaseCandidates" : ["${workspaceFolder}"],
+        "compilationDatabaseCandidates": ["${workspaceFolder}"],
         "semanticHighlighting": true,
         "disableDiagnostics": false,
         "disableCompletion": false,

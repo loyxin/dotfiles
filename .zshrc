@@ -2,6 +2,7 @@
 source ~/.profile
 [[ -d ~/.zplug ]] || git clone https://github.com/zplug/zplug ~/.zplug
 source ~/.zplug/init.zsh
+fpath=("$ZPLUG_HOME/bin" $fpath)
 
 zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 zplug "lib/completion", from:oh-my-zsh
@@ -18,8 +19,6 @@ zplug "plugins/universalarchive", from:oh-my-zsh, defer:2
 zplug "plugins/rust", from:oh-my-zsh, defer:2
 zplug "plugins/fancy-ctrl-z", from:oh-my-zsh, defer:2
 zplug "plugins/copypath", from:oh-my-zsh, defer:2
-zplug "plugins/ripgrep", from:oh-my-zsh, defer:2
-zplug "plugins/fd", from:oh-my-zsh, defer:2
 zplug "plugins/aliases", from:oh-my-zsh, defer:2
 zplug "plugins/safe-paste", from:oh-my-zsh, defer:2
 
@@ -51,7 +50,6 @@ zplug "yuhunas/zsh-ansimotd"
 # zplug "dracula/zsh", as:theme
 
 # completion
-fpath=("$ZPLUG_HOME/bin" $fpath)
 zplug "TheLocehiliosan/yadm", use:"completion/zsh/_yadm", as:command, defer:2
 
 source ~/.workdiff/zshplugin.zsh
@@ -141,8 +139,6 @@ zstyle ':fzf-tab:*' fzf-min-height 10
 eval "$(starship init zsh)"
 
 # bindkey
-
-compdef _git yadm
 compdef _vim vi
 
 export LS_COLORS="$(vivid generate dracula)"

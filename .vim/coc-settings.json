@@ -22,7 +22,7 @@
         "showStatus": true,
         // like 'errormessage'
         "allowCompoundWords": false,
-        "ignoreWords": ["ASML", "asml", "behaviour", "clangd", "cmake"],
+        "ignoreWords": ["ASML", "asml", "behaviour", "clangd", "cmake", "fftwf", "fplan", "FFTW"],
         "cSpell.ignorePaths": [
             "node_modules", // this will ignore anything the node_modules directory
             "**/node_modules", // the same for this one

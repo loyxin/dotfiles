@@ -158,6 +158,7 @@ Plug 'ryanoasis/vim-devicons',{'dir': '$pluginstalldir/colors/vim-devicons', 'de
 Plug 'lambdalisue/fern-renderer-nerdfont.vim', {'dir': '$pluginstalldir/colors/fern-renderer-nerdfont.vim', 'description': '图标', 'on':[]}
 Plug 'lambdalisue/nerdfont.vim', {'dir' : '$pluginstalldir/colors/nerdfont.vim', 'on': []}
 Plug 'lambdalisue/glyph-palette.vim', {'dir' : '$pluginstalldir/colors/glyph-palette.vim', 'on': []}
+Plug 'terryma/vim-expand-region', {'dir' : '$pluginstalldir/vim-expand-region'}
 
 call plug#end()
 

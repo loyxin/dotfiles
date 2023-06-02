@@ -6,7 +6,6 @@ fpath=("$ZPLUG_HOME/bin" $fpath)
 
 zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 zplug "lib/completion", from:oh-my-zsh
-zplug "lib/history", from:oh-my-zsh
 zplug "lib/key-bindings", from:oh-my-zsh
 zplug "lib/git", from:oh-my-zsh
 zplug "lib/theme-and-appearance", from:oh-my-zsh
@@ -43,7 +42,7 @@ zplug "arzzen/calc.plugin.zsh", defer:2
 zplug "k4rthik/git-cal", as:command, lazy:true
 
 zplug "junegunn/fzf", use:"shell/*.zsh"
-zplug "Aloxaf/fzf-tab", defer:2
+zplug "Aloxaf/fzf-tab"
 zplug "wfxr/forgit"
 zplug "yuhunas/zsh-ansimotd"
 

@@ -48,7 +48,7 @@ Diagnostics:
         hicpp-avoid-c-arrays,
         google-readability-todo,
         modernize-avoid-c-arrays,
-        misc-non-private-member-variables-in-classes
+        misc-non-private-member-variables-in-classes,
         cppcoreguidelines-pro-type-reinterpret-cast
       ]
     CheckOptions:
@@ -62,7 +62,7 @@ CompileFlags:
     Add: [-Wall, -Wextra, -Werror, -fsanitize=undefined, -Wno-format-security, -DNODEBUG, -mavx]
     Compiler: clang++
 InlayHints:
-    Enabled: Yes
+    Enabled: No
     ParameterNames: Yes
     DeducedTypes: Yes
 

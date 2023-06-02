@@ -1,52 +1,47 @@
 {
-	"files.exclude": {
-		".cache": true,
-		".ccache": true,
-		".config": true,
-		".vim": false,
-		".viminfo": true,
-		".vscode": true,
-		"**/.cache": true,
-		"**/.DS_Store": true,
-		"**/.git": true,
-		"**/.hg": true,
-		"**/.svn": true,
-		"**/.vim": true,
-		"**/*.ccls-cache": true,
-		"**/CVS": true
-	},
-	"editor.bracketPairColorization.enabled": true,
-	"editor.guides.bracketpairs": "active",
-	"security.workspace.trust.untrustedfiles": "open",
-	"ccls.clang.extraArgs": [
-		"-Wno-everything"
-	],
-	"ccls.diagnostics.spellChecking": false,
-	"ccls.launch.command": "/home/fyin/ccls/dist/bin/ccls",
-	"ccls.highlight.function.face": ["enabled"],
-	"ccls.highlight.type.face": ["enabled"],
-	"ccls.highlight.variable.face": ["enabled"],
-	"ccls.completion.detailedLabel": true,
-	"ccls.launch.args": [
-		"--init={\"capabilities\": {\"foldingRangeProvider\": false}}"
-	],
-	"ccls.cache.directory": "${workspaceFolder}/.cache/ccls-cache",
-	"C_Cpp.autocomplete": "Disabled",
-	"C_Cpp.errorSquiggles": "Disabled",
-	"C_Cpp.intelliSenseEngine": "Disabled",
-	"C_Cpp.formatting": "Disabled",
+    "clangd.arguments": [
+        "--clang-tidy",
+        "--compile-commands-dir=${workspaceF older}/build_root",
+        "--enable-config",
+        "--header-insertion-decorators",
+        "--header-insertion=iwyu",
+        "--background-index",
+        "--cross-file-rename",
+        "--all-scopes-completion",
+        "--fallback-style=LLVM",
+        "-j=12"
+    ],
+    "clangd.path": "/usr/local/brion_AVX/llvm/15.0.2_1/bin/clangd",
 
-	"extensions.autoUpdate": false,
+    "editor.semanticHighlighting.enabled": true,
 
-	"workbench.startupEditor": "none",
-	"timeline.excludeSources": [
-		"git-history"
-	],
-	"editor.fontSize": 16,
-	"workbench.iconTheme": "vscode-icons",
-	"vim.disableAnnoyingNeovimMessage": true,
-	"html.format.wrapLineLength": 80,
-	"explorer.confirmDelete": false,
-	"editor.wordWrap": "on",
-	"workbench.colorTheme": "Dracula",
+    "files.exclude": {
+        ".cache": true,
+        ".ccache": true,
+        ".config": true,
+        ".vim": false,
+        ".viminfo": true,
+        ".vscode": true,
+        "**/.cache": true,
+        "**/.DS_Store": true,
+        "**/.git": true,
+        "**/.hg": true,
+        "**/.svn": true,
+        "**/.vim": true,
+        "**/*.ccls-cache": true,
+        "**/CVS": true
+    },
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketpairs": "active",
+    "security.workspace.trust.untrustedfiles": "open",
+
+    "extensions.autoUpdate": false,
+
+    "workbench.startupEditor": "none",
+    "editor.fontSize": 16,
+    "workbench.iconTheme": "vscode-icons",
+    "html.format.wrapLineLength": 80,
+    "explorer.confirmDelete": false,
+    "editor.wordWrap": "on",
+    "workbench.colorTheme": "Dracula"
 }

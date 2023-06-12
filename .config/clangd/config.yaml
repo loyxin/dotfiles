@@ -59,7 +59,7 @@ Diagnostics:
 Index:
   Background: Build
 CompileFlags:
-    Add: [-Wall, -Wextra, -Werror, -fsanitize=undefined, -Wno-format-security, -DNODEBUG, -mavx]
+    Add: [-Wall, -Wextra, -Werror, -fsanitize=undefined, -Wno-format-security, -DNODEBUG, -mavx, --std=c++17]
     Compiler: clang++
 InlayHints:
     Enabled: No

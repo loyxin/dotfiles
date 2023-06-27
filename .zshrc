@@ -11,49 +11,40 @@ zplug "lib/git", from:oh-my-zsh
 zplug "lib/theme-and-appearance", from:oh-my-zsh
 zplug "lib/directories", from:oh-my-zsh
 
-zplug "plugins/colored-man-pages", from:oh-my-zsh, defer:1
-zplug "plugins/wd", from:oh-my-zsh, defer:1
-zplug "plugins/extract", from:oh-my-zsh, defer:1
-zplug "plugins/universalarchive", from:oh-my-zsh, defer:1
-zplug "plugins/rust", from:oh-my-zsh, defer:1
-zplug "plugins/fancy-ctrl-z", from:oh-my-zsh, defer:1
-zplug "plugins/copypath", from:oh-my-zsh, defer:1
-zplug "plugins/aliases", from:oh-my-zsh, defer:1
-zplug "plugins/safe-paste", from:oh-my-zsh, defer:1
+zplug "plugins/colored-man-pages", from:oh-my-zsh
+zplug "plugins/wd", from:oh-my-zsh
+zplug "plugins/extract", from:oh-my-zsh
+zplug "plugins/universalarchive", from:oh-my-zsh
+zplug "plugins/rust", from:oh-my-zsh
+zplug "plugins/fancy-ctrl-z", from:oh-my-zsh
+zplug "plugins/copypath", from:oh-my-zsh
+zplug "plugins/aliases", from:oh-my-zsh
+zplug "plugins/safe-paste", from:oh-my-zsh
 
-zplug "zsh-users/zsh-completions", defer:1
-
-zplug "lukechilds/zsh-better-npm-completion", defer:1
-zplug "lljbash/zsh-renew-tmux-env", defer:1
-zplug "jgogstad/passwordless-history", defer:1
-zplug "djui/alias-tips", defer:1
-zplug "brymck/print-alias", defer:1
+zplug "TheLocehiliosan/yadm", use:"completion/zsh/_yadm", as:command, defer:2
+zplug "lukechilds/zsh-better-npm-completion", defer:2
+zplug "zsh-users/zsh-completions"
+zplug "jgogstad/passwordless-history"
+zplug "djui/alias-tips"
+zplug "brymck/print-alias"
+zplug "b4b4r07/emoji-cli"
+zplug "yuhunas/zsh-ansimotd"
+zplug "mollifier/cd-gitroot", as:plugin, lazy:true
+zplug "arzzen/calc.plugin.zsh"
 # vi file:123
 # zplug "nviennot/zsh-vim-plugin", defer:2
 # zplug "jeffreytse/zsh-vi-mode", defer:2
 
-zplug "zdharma-continuum/fast-syntax-highlighting", defer:2
+zplug "zdharma-continuum/fast-syntax-highlighting"
 # zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-autosuggestions", defer:2
-zplug "b4b4r07/emoji-cli", defer:1
-
-zplug "mollifier/cd-gitroot", as:plugin, lazy:true
-zplug "arzzen/calc.plugin.zsh", defer:1
+zplug "zsh-users/zsh-autosuggestions"
 zplug "k4rthik/git-cal", as:command, lazy:true
-
-zplug "junegunn/fzf", use:"shell/*.zsh", defer:1
-zplug "Aloxaf/fzf-tab", defer:1
-zplug "wfxr/forgit", defer:1
-zplug "yuhunas/zsh-ansimotd", defer:1
+zplug "wfxr/forgit"
+zplug "junegunn/fzf", use:"shell/*.zsh"
+zplug "Aloxaf/fzf-tab"
 # zplug "RobSis/zsh-completion-generator"
 
-# zplug "dracula/zsh", as:theme
-
-# completion
-zplug "TheLocehiliosan/yadm", use:"completion/zsh/_yadm", as:command, defer:1
-
 source ~/.workdiff/zshplugin.zsh
-
 zplug load
 
 
@@ -144,3 +135,17 @@ compdef _vim vi
 export LS_COLORS="$(vivid generate dracula)"
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
+
+# history duplicate
+setopt EXTENDED_HISTORY # record timestamp
+setopt HIST_EXPIRE_DUPS_FIRST # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_BEEP
+setopt NOBEEP # Never beep
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZ=10000000
+export SAVEHIST=10000000

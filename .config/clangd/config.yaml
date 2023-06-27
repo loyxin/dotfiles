@@ -60,6 +60,7 @@ Index:
   Background: Build
 CompileFlags:
     Add: [-Wall, -Wextra, -Werror, -fsanitize=undefined, -Wno-format-security, -DNODEBUG, -mavx, --std=c++17]
+    Remove: [-Wduplicated-cond, -Wformat-overflow=2, -Wno-class-memaccess]
     Compiler: clang++
 InlayHints:
     Enabled: No

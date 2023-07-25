@@ -24,6 +24,7 @@ zplug "plugins/safe-paste", from:oh-my-zsh
 zplug "TheLocehiliosan/yadm", use:"completion/zsh/_yadm", as:command, defer:2
 zplug "lukechilds/zsh-better-npm-completion", defer:2
 zplug "zsh-users/zsh-completions"
+# zplug "marlonrichert/zsh-autocomplete"
 zplug "jgogstad/passwordless-history"
 zplug "djui/alias-tips"
 zplug "brymck/print-alias"
@@ -149,3 +150,5 @@ setopt NOBEEP # Never beep
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZ=10000000
 export SAVEHIST=10000000
+
+FAST_HIGHLIGHT[chroma-make]=

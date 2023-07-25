@@ -41,7 +41,7 @@ Plug 'junegunn/fzf', { 'dir': '$pluginstalldir/.fzf', 'on' : []}
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces=0
-let g:formatterpath = ['$myvimhome/.vim/.clang-format']
+let g:formatterpath = ['$myvimhome/.formatter']
 Plug 'Chiel92/vim-autoformat', {'on' : [], 'dir' : '$pluginstalldir/tool/vim-autoformat'}
 
 let g:quickui_color_scheme = 'gruvbox'
@@ -324,6 +324,7 @@ function! HelpVimTipsToggle()
                 \ ['alt+shift+hkjl windows'],
                 \ [' C+x number descrease'],
                 \ [' C+a number inscrease'],
+                \ [':r !ls pdf'],
                 \ ]
     let s:opts = {'title': 'vim tips'}
     call quickui#listbox#open(s:content, s:opts)

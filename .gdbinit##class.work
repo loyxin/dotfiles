@@ -1,5 +1,5 @@
 # source ~/.gdbinit.local
-source ~/.gdbinit.local.dash
-source ~/.gdbinit.my
-source ~/.gdbplfring.gdb
-source ~/program/work/my.gdb
+# source ~/.gdbinit.local.dash
+# source ~/.gdbinit.my
+# source ~/.gdbplfring.gdb
+# source ~/program/work/my.gdb

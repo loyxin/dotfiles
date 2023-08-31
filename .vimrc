@@ -1,3 +1,4 @@
+let g:pymode_python = 'python3'
 " 判断 {{{
 if &compatible
     set nocompatible

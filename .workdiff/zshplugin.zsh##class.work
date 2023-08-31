@@ -3,5 +3,6 @@ source ~/program/work/.bc
 zplug "loy.xin/proxy"
 zplug "loy.xin/toolsalias"
 source ~/ccls/pioncompletion/pion-zsh-complete.plugin.zsh
+enableUnittest
 
 export EMAIL="loy.luo@asml.com"

@@ -3,3 +3,4 @@ let g:myemail = "loy.luo@asml.com"
 let g:myname = "loy.luo"
 set pythonthreedll=~/program/install/lib/libpython3.so
 let g:iswork=1
+

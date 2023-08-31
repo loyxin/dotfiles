@@ -62,7 +62,7 @@
             "--background-index",
             "--cross-file-rename",
             "--fallback-style=LLVM",
-            "-j=12"
+            "-j=16"
         ],
         "compilationDatabaseCandidates": ["${workspaceFolder}"],
         "semanticHighlighting": true,

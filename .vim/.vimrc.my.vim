@@ -121,7 +121,7 @@ set pastetoggle=<F4>
 nnoremap <F5> :call Togglemouse()<CR>
 nnoremap <F6> :call ToggleLine()<CR>
 nnoremap <F7> :Vista!!<CR>
-nnoremap <F8> :MundoToggle<CR>
+nnoremap <F8> :CocCommand document.toggleInlayHint <CR>
 nnoremap <F10> :call asyncrun#quickfix_toggle(6)<cr>
 nnoremap <F12> :call Toggle_transparent_background()<CR>
 

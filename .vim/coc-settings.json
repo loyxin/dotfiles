@@ -72,6 +72,7 @@
     },
     "clangd.enabled": true,
     "clangd.inlayHints.enable": true,
+    "inlayHint.display": false,
     "semanticTokens.filetypes": ["*"],
 
     "cmake.lsp.serverPath": "cmake-language-server",

@@ -116,7 +116,6 @@ function! HelpVimFold()
 endfunction
 Plug 'pseewald/vim-anyfold', {'dir':'$pluginstalldir/vim-anyfold'}
 
-set viewoptions=cursor,folds,slash,unix
 Plug 'zhimsel/vim-stay', {'dir': '$pluginstalldir/vim-stay'}
 
 let g:DoxygenToolkit_authorName="loy"
@@ -364,4 +363,3 @@ endfunction
 command! -bang -nargs=* GRg
             \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>), 1, fzf#vim#with_preview({'dir' : GetRootPath()}), <bang>0)
 
-set foldlevel=0

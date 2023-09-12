@@ -4,7 +4,7 @@ Diagnostics:
 Index:
   Background: Build
 CompileFlags:
-    Add: [-Wall, -Wextra, -Werror, -mavx, --std=c++17, -stdlib=libc++]
+    Add: [-Wall, -Wextra, -Werror, -mavx, -std=c++17, -nostdinc++]
     Remove: [-Wduplicated-cond, -Wformat-overflow=2, -Wno-class-memaccess, -fno-lifetime-dse, -fno-lifetime-dse]
     Compiler: clang++
 InlayHints:

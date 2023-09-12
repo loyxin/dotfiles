@@ -59,6 +59,8 @@ syntax on      "语法高亮
 " set   autoindent " 自动缩进
 " set   cindent
 " 设置当文件被改动时自动载入
+set viewoptions=cursor,folds,slash,unix
+set foldlevel=0
 set autoread
 set autowrite " 自动保存
 set backspace=indent,eol,start " backspace不能使用
@@ -239,6 +241,7 @@ nnoremap <leader>gu :CocCommand git.chunkUndo<cr>
 nnoremap <leader>kc :CocCommand git.keepCurrent<cr>
 nnoremap <leader>ki :CocCommand git.keepIncoming<cr>
 nnoremap <leader>kb :CocCommand git.keepBoth<cr>
+
 
 " Use <C-l> for trigger snippet expand.
 imap <C-t> <Plug>(coc-snippets-expand)
